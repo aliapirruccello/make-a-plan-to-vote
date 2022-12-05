@@ -70,15 +70,15 @@ body {
 
 .btn {
   display: inline-block;
-  background: #000;
-  color: #fff;
+  background: rgb(239, 64, 78);
+  color: white;
   border: none;
   padding: 10px 20px;
   margin: 5px;
   border-radius: 5px;
   cursor: pointer;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 20px;
   font-family: inherit;
 }
 
@@ -96,7 +96,7 @@ body {
 }
 
 .task {
-  background: #f4f4f431;
+  background: #3a3a3a31;
   margin: 5px;
   padding: 10px 20px;
   cursor: pointer;
