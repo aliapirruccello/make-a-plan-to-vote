@@ -9,33 +9,33 @@ const App = () => {
     {
     "id": 1,
     "text": "Find your polling location",
-    "other": "no-show",
-    "day": "Monday",
-    "reminder": true
+    "reminder": true,
+    "link":"https://www.usa.gov/election-day#item-37327"
   },
   {
+    "id": 2,
     "text": "Check your registration",
-    "day": "Tuesday",
     "reminder": true,
-    "id": 2
+    "link": "https://vote.gov/"
   },
   {
+    "id": 3,
     "text": "Vote early or by mail",
-    "day": "Wednesday",
     "reminder": true,
-    "id": 3
+    "link": "https://www.nass.org/can-i-vote/absentee-early-voting"
   },
   {
+    "id": 4,
     "text": "Check voter ID requirements",
-    "day": "Thursday",
     "reminder": true,
-    "id": 4
+    "link": "https://www.usa.gov/voter-id"
   },
   {
+    "id": 5,
     "text": "Know your voting rights",
-    "day": "Friday",
+    
     "reminder": true,
-    "id": 5
+    "link": "https://www.aclu.org/know-your-rights/voting-rights"
   }
 ])
 
