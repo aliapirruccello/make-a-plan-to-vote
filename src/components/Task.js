@@ -7,7 +7,7 @@ const Task = ({ task, onComplete, onToggle }) => {
         <h3>
           {task.text} <FaTimes
           className="checkbox"
-          style={{ color: 'purple', cursor: 'pointer'}} 
+          style={{ color: 'red', cursor: 'pointer'}} 
           onClick={() => onComplete(task.id)}
           />
           </h3>
