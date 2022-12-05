@@ -51,12 +51,12 @@ const AddTask = ({ onAdd }) => {
 </div> */}
 
         <div className='form-control form-control-check'>
-            <label>Mark as incomplete (double click task when complete)</label>
-            <input 
+            <label></label>
+            {/* <input 
             type="checkbox" 
             checked={reminder}
             value={reminder}
-            onChange={(e) => setReminder(e.currentTarget.checked)} />
+            onChange={(e) => setReminder(e.currentTarget.checked)} /> */}
         </div>
         <input type="submit" value='Save Additional Plan' className="btn btn-block" alt="submit button to input new task in your voting plan">
 

@@ -68,6 +68,16 @@ body {
   margin-bottom: 20px;
 }
 
+.instructions {
+  color:rgb(252, 170, 43);
+  font-size:medium;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-bottom: 20px;
+}
+
 .btn {
   display: inline-block;
   background: rgb(239, 64, 78);
@@ -103,7 +113,9 @@ body {
 }
 
 .task.reminder {
-  border-left: 5px solid rgb(252, 170, 43);
+  /* border-left: 5px solid rgb(252, 170, 43); */
+  text-decoration: line-through 2px rgb(252, 170, 43) ;
+
 }
 
 .task h3 {

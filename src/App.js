@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import Header from './components/Header'
+import Instructions from './components/Instructions'
 import Tasks from './components/Tasks'
 import AddTask from './components/AddTask'
 
@@ -9,32 +10,32 @@ const App = () => {
     {
     "id": 1,
     "text": "Find your polling location",
-    "reminder": true,
+    "reminder": false,
     "link":"https://www.usa.gov/election-day#item-37327"
   },
   {
     "id": 2,
     "text": "Check your registration",
-    "reminder": true,
+    "reminder": false,
     "link": "https://vote.gov/"
   },
   {
     "id": 3,
     "text": "Vote early or by mail",
-    "reminder": true,
+    "reminder": false,
     "link": "https://www.nass.org/can-i-vote/absentee-early-voting"
   },
   {
     "id": 4,
     "text": "Check voter ID requirements",
-    "reminder": true,
+    "reminder": false,
     "link": "https://www.usa.gov/voter-id"
   },
   {
     "id": 5,
     "text": "Know your voting rights",
     
-    "reminder": true,
+    "reminder": false,
     "link": "https://www.aclu.org/know-your-rights/voting-rights"
   }
 ])
@@ -80,6 +81,7 @@ const addTask = (task) => {
      onAdd={() => setShowAddTask(!showAddTask)} 
      showAdd={showAddTask}
      />
+     <Instructions />
      {showAddTask && <AddTask onAdd={addTask}/>}
      {tasks.length > 0 ? (
      <Tasks tasks={tasks} 
