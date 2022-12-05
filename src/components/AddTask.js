@@ -58,7 +58,7 @@ const AddTask = ({ onAdd }) => {
             value={reminder}
             onChange={(e) => setReminder(e.currentTarget.checked)} />
         </div>
-        <input type="submit" value='Save Additional Plan' className="btn btn-block" >
+        <input type="submit" value='Save Additional Plan' className="btn btn-block" alt="submit button to input new task in your voting plan">
 
 
 

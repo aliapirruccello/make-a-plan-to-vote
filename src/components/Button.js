@@ -6,7 +6,8 @@ const Button = ({color, text, onClick}) => {
   <button 
     onClick= {onClick} 
     // style={{ backgroundColor: color }} 
-    className='btn'>
+    className='btn'
+    alt="toggle button to show option to add another task to your voting plan">
       {text}
     </button>
   )
