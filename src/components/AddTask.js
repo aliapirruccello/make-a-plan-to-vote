@@ -39,7 +39,7 @@ const AddTask = ({ onAdd }) => {
                 </input>
         </div>   
         <div className='form-control form-control-check'>
-            <label>Mark as important (yellow on left)</label>
+            <label>Mark as incomplete (double click task when complete)</label>
             <input 
             type="checkbox" 
             checked={reminder}
