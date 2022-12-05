@@ -1,44 +1,60 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Header from './components/Header'
 import Tasks from './components/Tasks'
 import AddTask from './components/AddTask'
 
 const App = () => {
   const [showAddTask, setShowAddTask] = useState(false)
-  const [tasks, setTasks] = useState([
+  const [tasks, setTasks] = useState([ 
+    {
+    "id": 1,
+    "text": "Find your polling location",
+    "other": "no-show",
+    "day": "Monday",
+    "reminder": true
+  },
+  {
+    "text": "Check your registration",
+    "day": "Tuesday",
+    "reminder": true,
+    "id": 2
+  },
+  {
+    "text": "Vote early or by mail",
+    "day": "Wednesday",
+    "reminder": true,
+    "id": 3
+  },
+  {
+    "text": "Check voter ID requirements",
+    "day": "Thursday",
+    "reminder": true,
+    "id": 4
+  },
+  {
+    "text": "Know your voting rights",
+    "day": "Friday",
+    "reminder": true,
+    "id": 5
+  }
+])
 
-    {
-      "id": 1,
-      "text": "Find your polling location",
-      "other": "no-show",
-      "day": "Monday",
-      "reminder": true
-    },
-    {
-      "text": "Check your registration",
-      "day": "Tuesday",
-      "reminder": true,
-      "id": 3
-    },
-    {
-      "text": "Vote early or by mail",
-      "day": "Wednesday",
-      "reminder": true,
-      "id": 4
-    },
-    {
-      "text": "Check voter ID requirements",
-      "day": "Thursday",
-      "reminder": true,
-      "id": 3
-    },
-    {
-      "text": "Know your voting rights",
-      "day": "Friday",
-      "reminder": true,
-      "id": 4
+  useEffect(() => {
+    const getTasks = async () => {
+      const tasksFromServer = await fetchTasks()
+      setTasks(tasksFromServer)
     }
-  ])
+    getTasks()
+  }, [])
+
+  //fetch tasks 
+
+  const fetchTasks = async () => {
+    const res = await fetch ('http://localhost:5000/tasks')
+    const data = await res.json()
+
+    return data
+  }
 
   //add task
 
@@ -48,8 +64,8 @@ const addTask = (task) => {
   setTasks([...tasks, newTask])
 }
 
-  //delete task
-  const deleteTask = (id) => {
+  //complete(instead of delete) task
+  const completeTask = (id) => {
     setTasks(tasks.filter((task) => task.id !== id))
   }
 
@@ -60,9 +76,17 @@ const addTask = (task) => {
 
   return (
     <div className="container">
-     <Header onAdd={() => setShowAddTask(!showAddTask)} showAdd={showAddTask}/>
+     <Header 
+     onAdd={() => setShowAddTask(!showAddTask)} 
+     showAdd={showAddTask}
+     />
      {showAddTask && <AddTask onAdd={addTask}/>}
-     {tasks.length > 0 ? <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder}/> : "No tasks to display"}
+     {tasks.length > 0 ? (
+     <Tasks tasks={tasks} 
+     onComplete={completeTask} 
+     onToggle={toggleReminder}/>
+     ) : ("No tasks to display"
+     )}
     </div>
   );
 }
