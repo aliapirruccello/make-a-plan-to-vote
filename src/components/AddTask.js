@@ -1,9 +1,12 @@
 import { useState } from 'react'
+// import Calendar from 'react-calendar'
 
 const AddTask = ({ onAdd }) => {
     const [text, setText] = useState('')
     const [day, setDay] = useState('')
+    // const [value, setValue] = useState(new Date())
     const [reminder, setReminder] = useState(false)
+
 
     const onSubmit = (e) => {
         e.preventDefault()
@@ -17,6 +20,10 @@ const AddTask = ({ onAdd }) => {
         setDay ('')
         setReminder(false)
     }
+
+    // function onChange(nextValue) {
+    //     setValue(nextValue);
+    // }
 
   return (
     <form className='add-form' onSubmit={onSubmit}>
@@ -38,6 +45,11 @@ const AddTask = ({ onAdd }) => {
             onChange={(e) => setDay(e.target.value)} >
                 </input>
         </div>   
+
+{/* <div>
+<Calendar onChange={onChange} value={value} />
+</div> */}
+
         <div className='form-control form-control-check'>
             <label>Mark as incomplete (double click task when complete)</label>
             <input 
