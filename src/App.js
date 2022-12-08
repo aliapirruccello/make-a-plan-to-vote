@@ -4,6 +4,9 @@ import Instructions from './components/Instructions'
 import Tasks from './components/Tasks'
 import AddTask from './components/AddTask'
 
+
+
+
 const App = () => {
   const [showAddTask, setShowAddTask] = useState(false)
   const [tasks, setTasks] = useState([ 
@@ -51,11 +54,13 @@ const App = () => {
   //fetch tasks 
 
   const fetchTasks = async () => {
-    const res = await fetch ('http://localhost:3000/tasks')
+    const res = await fetch ('http://localhost:8080/tasks')
     const data = await res.json()
 
     return data
   }
+
+
 
   //add task
 
@@ -92,5 +97,9 @@ const addTask = (task) => {
     </div>
   );
 }
+
+
+
+
 
 export default App;
