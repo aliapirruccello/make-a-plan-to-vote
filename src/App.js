@@ -51,10 +51,28 @@ const App = () => {
     getTasks()
   }, [])
 
+//fix cors issue
+
+const makeAPICall = async () => {
+  try {
+    const response = await fetch('http://localhost:3000/', {mode:'cors'});
+    const data = await response.json();
+    console.log({ data })
+  }
+  catch (e) {
+    console.log(e)
+  }
+}
+useEffect(() => {
+  makeAPICall();
+}, [])
+
+
+
   //fetch tasks 
 
   const fetchTasks = async () => {
-    const res = await fetch ('http://localhost:8080/tasks')
+    const res = await fetch ('http://localhost:3000/tasks')
     const data = await res.json()
 
     return data
