@@ -1,3 +1,11 @@
+# Here is a video preview of the app
+
+![voting-guide](https://user-images.githubusercontent.com/98843063/209581171-8c6fe73f-6ecd-44ea-a338-ef26845a5933.gif)
+
+# Here is a link to the live site
+
+https://make-a-plan-to-vote.netlify.app/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
